@@ -6,7 +6,7 @@
 + 中英文TTS
 ![test_TTS_en](https://github.com/lililuya/Graduation-Project/assets/141640497/f4e3180b-92c1-4740-aa23-27c5e81c1fbb)
 + 中英文ASR
-![test_TTS_zh](https://github.com/lililuya/Graduation-Project/assets/141640497/981f25a4-4954-4a86-943b-5d1bd6c49bb3)
+![page4](https://github.com/lililuya/Graduation-Project/assets/141640497/00deaa77-58f8-46f4-ae69-19013efbe520)
 + 抠图
 ![page3](https://github.com/lililuya/Graduation-Project/assets/141640497/69b37296-6d36-45ae-9b13-67c0b1c2f48d)
 
