@@ -1,9 +1,13 @@
 # Graduation-Project
  基于大模型的高质量情感虚拟人系统
 ## 示例
++ 情感虚拟人生成模块
 ![test_record](https://github.com/lililuya/Graduation-Project/assets/141640497/a4d331ff-d060-47e7-924a-bb35fd6004b8)
++ 中英文TTS
 ![test_TTS_en](https://github.com/lililuya/Graduation-Project/assets/141640497/f4e3180b-92c1-4740-aa23-27c5e81c1fbb)
++ 中英文ASR
 ![test_TTS_zh](https://github.com/lililuya/Graduation-Project/assets/141640497/981f25a4-4954-4a86-943b-5d1bd6c49bb3)
++ 抠图
 ![page3](https://github.com/lililuya/Graduation-Project/assets/141640497/69b37296-6d36-45ae-9b13-67c0b1c2f48d)
 
 ## 引用
