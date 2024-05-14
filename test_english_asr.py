@@ -27,7 +27,7 @@ model = AutoModel(model="paraformer-zh", model_revision="v2.0.4",
                   vad_model="fsmn-vad", vad_model_revision="v2.0.4",
                   punc_model="ct-punc-c", punc_model_revision="v2.0.4",
                   )
-res = model.generate(input="/mnt/sdb/cxh/liwen/EAT_code/demo/video_processed/W015_neu_1_002/W015_neu_1_002.wav", 
+res = model.generate(input="./demo/video_processed/W015_neu_1_002/W015_neu_1_002.wav", 
             batch_size_s=300, 
             hotword='魔搭')
 print(res[0]['text'])
