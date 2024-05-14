@@ -475,18 +475,9 @@ class metahuman():
         # input_buff     = torch.empty((1,3,512,512), dtype=torch.float32, device="cuda").contiguous() # 判断Tensor按行展开后的顺序与其storage的顺序是否一致
         # output_buff    = torch.empty((1,3,512,512), dtype=torch.float32, device="cuda").contiguous()
         
-        for i in tqdm(range(len(img_list))):
-            input_tensor = img_list[i].cuda()
-            input_buff   = input_tensor
-            self.io_binding.bind_input(name='input', device_type='cuda', device_id=0, element_type=np.float32, shape=(1,3,512,512), buffer_ptr=input_buff.data_ptr())
-            self.io_binding.bind_output(name='output', device_type='cuda', device_id=0, element_type=np.float32, shape=(1,3,512,512), buffer_ptr=output_buff.data_ptr())
-            self.session.run_with_iobinding(self.io_binding)
-            outpred1 = torch.squeeze(output_buff)    # (3, 512, 512)
-            outpred1 = torch.clamp(outpred1, -1, 1)  # 限制 -1 ~ 1
-            outpred1 = torch.add(outpred1, 1)        # 0 - 1
-            outpred1 = torch.div(outpred1, 2)        # 0 - 0.5
-            outpred1 = torch.mul(outpred1, 255)[:,:,:].permute(1,2,0).cpu().numpy()  # HWC 
-            result_list.append(outpred1.astype(np.uint8))
+        # loop every frame to restoration
+        # ......Hide details
+        
         end_time = time.time()
         
         print(f"==================== End GFPGAN restorate frames ====================")
