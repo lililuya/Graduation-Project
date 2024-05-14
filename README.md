@@ -61,3 +61,7 @@
 2. 背景抖动，[EAT作者建议](https://github.com/yuangan/EAT_code/issues/27)，本仓库采取MODNet方案。
 3. Deepspeech加速，目前提取音频特征需要时间特别久，使用的deepspeech-0.1版本。
 4. GPT-SOVITS模型自定义载，资源换时间，每个模型大约1.8G左右，可以写入配置文件自定义加载。
+
+## 目前的总占用显存情况
+1. ChatGLM2-6B量化大模型---6G
+2. EAT初始化化类中所有模型---13G（优化GPT-Sovits权重加载可以到10G）
