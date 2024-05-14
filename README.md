@@ -56,3 +56,8 @@
 8. [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#downloading)
 9. [GFPGAN](https://github.com/TencentARC/GFPGAN)
 10. [EAT](https://github.com/yuangan/EAT_code)
+## 一些参考
+1. 头拼合进身体[EAT作者建议](https://github.com/yuangan/EAT_code/issues/16)。
+2. 背景抖动[EAT作者建议](https://github.com/yuangan/EAT_code/issues/27)，本仓库采取MODNet方案。
+3. Deepspeech加速，目前提取音频特征需要时间特别久，使用的deepspeech-0.1版本。
+4. GPT-SOVITS模型自定义载，资源换时间，每个模型大约1.8G左右，可以写入配置文件自定义加载。
