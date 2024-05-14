@@ -10,7 +10,7 @@
 + 抠图
 ![page3](https://github.com/lililuya/Graduation-Project/assets/141640497/69b37296-6d36-45ae-9b13-67c0b1c2f48d)
 
-## 引用
+## 引用文献
 ```txt
 @InProceedings{Gan_2023_ICCV,
     author    = {Gan, Yuan and Yang, Zongxin and Yue, Xihang and Sun, Lingyun and Yang, Yi},
