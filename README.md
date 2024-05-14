@@ -38,3 +38,14 @@
   year={2022}
 }
 ```
+## 相关仓库
+1. [FUN-ASR-ZH](https://www.modelscope.cn/models/iic/speech_paraformerbert_asr_nat-zh-cn-16k-aishell2-vocab5212-pytorch/summary)
+2. [FUN-ASR-EN](https://www.modelscope.cn/models/iic/speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/summary)
+3. [TTS-Sovits](https://github.com/RVC-Boss/GPT-SoVITS)
+4. [ChatGLM2-6B](https://github.com/THUDM/ChatGLM2-6B)
+5. [ModNet](https://github.com/ZHKKKe/MODNet)
+6. [EAT](https://github.com/yuangan/EAT_code)
+7. [DeepSpeech](https://github.com/mozilla/DeepSpeech)
+8. [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#downloading)
+9. [GFPGAN](https://github.com/TencentARC/GFPGAN)
+10. [EAT](https://github.com/yuangan/EAT_code)
