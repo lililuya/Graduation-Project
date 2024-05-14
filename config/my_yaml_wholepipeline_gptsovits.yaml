@@ -1,0 +1,36 @@
+# gfpgan onnx_path
+onnx_path: "./restoration/GFPGANv1.4.onnx"
+
+# EAT model path
+EAT_ckpt: "./ckpt/deepprompt_eam3d_all_final_313.pth.tar"
+
+# GPT-SoVits model path and reference info 
+sample_rate: 32000
+gpt_model_path_zh: "/mnt/sdb/cxh/liwen/GPT-SoVITS/GPT_weights/liwen-e25.ckpt"
+sovits_model_path_zh: "/mnt/sdb/cxh/liwen/GPT-SoVITS/SoVITS_weights/liwen_e25_s125.pth"
+ref_audio_path_zh: "./GPT_SoVits/reference_audio/reference_ZH.wav"
+prompt_text_zh: "人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。"
+text_language_zh: "中文"
+
+gpt_model_path_en: "./GPT_SoVits/weights/EN/GPT_weights/liwen_en-e25.ckpt"
+sovits_model_path_en: "./GPT_SoVits/weights/EN/SoVITS_weights/liwen_en_e25_s100.pth"
+ref_audio_path_en: "./GPT_SoVits/reference_audio/reference_EN.wav"
+prompt_text_en: "Give it a try and see if you can say it quickly and correctly"
+text_language_en: "英文"
+
+gpt_model_path_fufu: "./GPT_SoVits/weights/FUFU/芙宁娜-e10.ckpt"
+sovits_model_path_fufu: "./GPT_SoVits/weights/FUFU/芙宁娜_e25_s1625.pth"
+ref_audio_path_fufu: "./GPT_SoVits/weights/FUFU/fufu.mp3"
+prompt_text_fufu: "太普通了！哼，这种缺乏特色的料理得不到我的认可！"
+text_language_fufu: "中文"
+
+gpt_model_path_liu: "./GPT_SoVits/weights/LIUYING/流萤-e10.ckpt"
+sovits_model_path_liu: "./GPT_SoVits/weights/LIUYING/流萤_e15_s810.pth"
+ref_audio_path_liu: "./GPT_SoVits/weights/LIUYING/liuying.wav"
+prompt_text_liu: "因为你身上别着星穹列车的徽章呀，我在大银幕上见过！"
+text_language_liu: "中文"
+
+
+
+# EAT sunmodel config and model
+extractor_ckpt: "./ckpt/pretrain_new_274.pth.tar"
