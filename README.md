@@ -1,7 +1,21 @@
 # 基于大模型的高质量情感虚拟人系统
 ## 一些测试结果
 ### 测试卡通人像
-<video src='./text_exp_graduate_project/different_person/comic/original_comic.mp4' width=180/><video/>
+
+| original                 | gfpgan      |   driven image |
+|:--------------------: |:--------------------: | :----: |
+| <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/c4ff0ceb-2bc4-419a-aa62-20d78793f2b2" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/bba70b1e-b3a3-4918-bc86-e0bf77ae5c26" type="video/mp4" > </video>  | <img src='./img/comic.jpg' width='380'> 
+
+
+
+
+
+
+
+
+
+
+
 ## 环境准备
 
 ## 一些环境上的问题
