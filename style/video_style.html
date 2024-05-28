@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Gallery</title>
+<style>
+    .video-container {
+        display: inline-block;
+        width: 50%; /* 控制每个视频容器的宽度 */
+        padding: 0 5px; /* 可以根据需要调整间距 */
+    }
+    .video-container video {
+        width: 100%; /* 让视频充满容器 */
+        height: auto; /* 根据比例调整高度 */
+    }
+</style>
+</head>
+<body>
+<div class="video-container">
+    <video controls>
+        <source src="../text_exp_graduate_project/different_person/comic/original_comic.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="video-container">
+    <video controls>
+        <source src="../text_exp_graduate_project/different_person//comic/gpfgan_comic.mp4" type="video/mp4">
+    </video>
+</div>
+</body>
+</html>
