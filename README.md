@@ -1,22 +1,10 @@
 # 基于大模型的高质量情感虚拟人系统
 ## 一些测试结果
 ### 测试卡通人像
-<div id="video-container" style="display:flex;"></div>
-
-<script>
-  const video1 = document.createElement('video');
-  video1.src = 'https://github.com/lililuya/Graduation-Project/assets/141640497/b7c1a20b-5ed8-4a63-a908-09b05de29eed';
-  video1.width = 180;
-
-  const video2 = document.createElement('video');
-  video2.src = 'https://github.com/lililuya/Graduation-Project/assets/141640497/dcda18cf-2b14-4545-871e-52a5fc4a6ff5';
-  video2.width = 180;
-
-  const container = document.getElementById('video-container');
-  container.appendChild(video1);
-  container.appendChild(video2);
-</script>
-
+<div style="display: flex; justify-content: center;">
+  <video src='https://github.com/lililuya/Graduation-Project/assets/141640497/b7c1a20b-5ed8-4a63-a908-09b05de29eed' width="45%"></video>
+  <video src='https://github.com/lililuya/Graduation-Project/assets/141640497/dcda18cf-2b14-4545-871e-52a5fc4a6ff5' width="45%"></video>
+</div>
 
 ## 环境准备
 
