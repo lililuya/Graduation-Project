@@ -56,7 +56,6 @@ pip install modelscope==1.13.3
 ```
 ### 2.3 tensorrt安装
 参考[tensorrt安装笔记](https://github.com/lililuya/break-stones/blob/main/library%20problem/Tensorrt%20install%20and%20usage.md)
-## 一些环境上的问题
 
 ### 2.4 一些问题
 + 主要可能出现的问题是numba版本的问题，出现后更新numba版本即可
