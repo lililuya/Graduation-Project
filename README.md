@@ -50,7 +50,7 @@ pip install funasr==1.0.22
 pip install modelscope==1.13.3
 ```
 ### 2.3 tensorrt安装
-参考[tensorrt安装笔记](./Tensorrt%20install%20and%20usage.md)
+参考[tensorrt安装笔记](https://github.com/lililuya/break-stones/blob/main/library%20problem/Tensorrt%20install%20and%20usage.md)
 ## 一些环境上的问题
 
 ## 引用文献
