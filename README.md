@@ -13,7 +13,11 @@
 ### 1.3 不同表情测试
 |driven image|happy|scared|neural|
 | :----: |:--------------------: |:--------------------: |:--------------------: |
-| <img src='./img/jiege.jpg' width='380'> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/7b155a42-6c87-4855-a5dd-70ac3b8c6686" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/5c63af56-2900-45f8-95db-045c951bccc0" type="video/mp4" > </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/91081951-bcd9-4df6-bf5b-2cb84e53ee04" type="video/mp4" > </video>| <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/af5db4bf-5a1e-4833-954d-2dc2f32691f4" type="video/mp4" > </video>|
+| <img src='./img/jiege.jpg' width='380'> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/7b155a42-6c87-4855-a5dd-70ac3b8c6686" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/5c63af56-2900-45f8-95db-045c951bccc0" type="video/mp4" > </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/50cbe2fe-8edb-4e34-99ed-5477f1cd5a60" type="video/mp4" > 
+
+
+
+
 
 
 ### 1.4 不同的声音测试
