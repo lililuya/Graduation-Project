@@ -35,7 +35,7 @@
 git clone https://github.com/lililuya/Graduation-Project.git
 cd env
 ```
-Use conda or pip 
++ Use conda or pip 
 ```bash
 # if use conda, modify the prefix of environment.yml or delete it to use the default location
 conda env create -f environment.yml
@@ -52,6 +52,43 @@ pip install modelscope==1.13.3
 ### 2.3 tensorrt安装
 参考[tensorrt安装笔记](https://github.com/lililuya/break-stones/blob/main/library%20problem/Tensorrt%20install%20and%20usage.md)
 ## 一些环境上的问题
+
+### 2.4 一些问题
++ 主要可能出现的问题是numba版本的问题，出现后更新numba版本即可
+```bash
+pip install -U numba
+```
+## 3.权重文件
++ [EAT权重文件](https://drive.google.com/file/d/1KK15n2fOdfLECWN5wvX54mVyDt18IZCo/view?usp=drive_link)
+    + 下载后放在根目录下的`ckpt`下
++ [GFPGAN](https://github.com/xuanandsix/GFPGAN-onnxruntime-demo)
+    + 下载后放到根目录的`restoration`下面
++ [GPTSOVIT权重](https://huggingface.co/kaze-mio/so-vits-genshin/tree/main)
+    + 下载后放到根目录下的`GPT_SoVits/weights`下面
++ [MODNET权重](https://drive.google.com/drive/folders/1umYmlCulvIFNaqPjwod1SayFmSRHziyR?usp=sharing)
+    + 下载后放在`pretrain`下面
++ [DeepSpeech](https://github.com/ashawkey/RAD-NeRF)
+    + 参考RADNERF
+
+## 4.运行
+### 4.1 本地运行
+```python
+python whole_pipeline_GPTSOVITS_asr_en_gradio_multivoice.py
+```
+### 4.2 使用Gradio自带内网穿透
+```bash
+# Modify launch=True
+```
++ 一些配置参考[Gradio Network Traversal](https://github.com/lililuya/Meta_Doctor)
+### 4.3界面
++ 情感虚拟人生成模块
+![test_record](https://github.com/lililuya/Graduation-Project/assets/141640497/a4d331ff-d060-47e7-924a-bb35fd6004b8)
++ 中英文TTS
+![test_TTS_en](https://github.com/lililuya/Graduation-Project/assets/141640497/f4e3180b-92c1-4740-aa23-27c5e81c1fbb)
++ 中英文ASR
+![page4](https://github.com/lililuya/Graduation-Project/assets/141640497/00deaa77-58f8-46f4-ae69-19013efbe520)
++ 抠图
+![page3](https://github.com/lililuya/Graduation-Project/assets/141640497/69b37296-6d36-45ae-9b13-67c0b1c2f48d)
 
 ## 引用文献
 ```txt
