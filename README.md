@@ -1,7 +1,7 @@
 # 基于大模型的高质量情感虚拟人系统
 ## 一些测试结果
 ### 测试卡通人像
-
+<iframe src="../style/video_style.html" width="100%" height="400px"></iframe>
 
 ## 环境准备
 
