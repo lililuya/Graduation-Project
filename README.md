@@ -1,11 +1,8 @@
 # 基于大模型的高质量情感虚拟人系统
 ## 一些测试结果
 ### 测试卡通人像
-<p align="center">
-  <img src="[comic_o](https://github.com/lililuya/Graduation-Project/assets/141640497/3d8107f2-a147-4241-964a-6c98affb69d4)" width="45%" />
-  <img src="[comic_g](https://github.com/lililuya/Graduation-Project/assets/141640497/3d62a3c5-9045-4870-9592-045ad12225ad)" width="45%" /> 
-</p>
-
+![comic_o](https://github.com/lililuya/Graduation-Project/assets/141640497/3d8107f2-a147-4241-964a-6c98affb69d4)
+![comic_g](https://github.com/lililuya/Graduation-Project/assets/141640497/3d62a3c5-9045-4870-9592-045ad12225ad)
 
 
 
