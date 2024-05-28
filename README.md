@@ -140,15 +140,13 @@ python whole_pipeline_GPTSOVITS_asr_en_gradio_multivoice.py
 + [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#downloading)
 + [GFPGAN](https://github.com/TencentARC/GFPGAN)
 + [EAT](https://github.com/yuangan/EAT_code)
-## 一些参考
-1. 头拼合进身体，[EAT作者建议](https://github.com/yuangan/EAT_code/issues/16)。
-2. 背景抖动，[EAT作者建议](https://github.com/yuangan/EAT_code/issues/27)，本仓库采取MODNet方案。
-3. Deepspeech加速，目前提取音频特征需要时间特别久，使用的deepspeech-0.1版本。
-4. GPT-SOVITS模型自定义载，资源换时间，每个模型大约1.8G左右，可以写入配置文件自定义加载。
 
-## 目前的总占用显存情况
-1. ChatGLM2-6B量化大模型---6G
-2. EAT初始化化类中所有模型---13G（优化GPT-Sovits权重加载可以到10G）
-
+## 目前存在的问题
++ 显存需要6G+10G才可以跑起来，现存占用过大。
++ 目前展示的结果效果不太好，因为选择的初始图片不太清晰，并且onnx下损失了超分模型的部分精度。
++ 头拼合进身体，[EAT作者建议](https://github.com/yuangan/EAT_code/issues/16)。
++ 背景抖动，[EAT作者建议](https://github.com/yuangan/EAT_code/issues/27)，本仓库采取MODNet方案。
++ Deepspeech加速，目前提取音频特征需要时间特别久，使用的deepspeech-0.1版本。
++ GPT-SOVITS模型自定义载，资源换时间，每个模型大约1.8G左右，可以写入配置文件自定义加载。
 ## 声明
 本项目以EAT为核心模型，主要做一个实验探究，不存在任何其他用途。
