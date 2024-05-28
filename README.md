@@ -13,12 +13,13 @@
 ### 1.3 不同表情测试
 |driven image|happy|scared|neural|
 | :----: |:--------------------: |:--------------------: |:--------------------: |
-| <img src='./img/jiege.jpg' width='380'> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/7b155a42-6c87-4855-a5dd-70ac3b8c6686" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/5c63af56-2900-45f8-95db-045c951bccc0" type="video/mp4" > </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/91081951-bcd9-4df6-bf5b-2cb84e53ee04" type="video/mp4" > </video>| <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/21541e9a-c15f-4ce6-887f-fdb712e60a0e" type="video/mp4" > </video>|
+| <img src='./img/jiege.jpg' width='380'> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/7b155a42-6c87-4855-a5dd-70ac3b8c6686" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/5c63af56-2900-45f8-95db-045c951bccc0" type="video/mp4" > </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/38fd3123-21ee-4666-b5b3-e97a1a7f5853" type="video/mp4" > 
 
 ### 1.4 不同的声音测试
 |liwen|fufu|liuying|
 | :----: |:--------------------: |:--------------------: |
 | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/4692307e-c437-4cf1-a26d-a23791ea0b45" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/b76d61e8-8a92-4d1a-bb55-6240ff8fc166" type="video/mp4" > </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/91081951-bcd9-4df6-bf5b-2cb84e53ee04" type="video/mp4" > </video>| | <video  src="" type="video/mp4" > </video>
+
 ### 1.5 不同语言测试
 |Chinese|English|
 |:--------------------: |:--------------------: |
@@ -31,11 +32,15 @@
 
 ## 2. 环境准备
 ### 2.1 准备EAT环境和GPT-SOVITS环境
++ 系统环境
+  + Python 3.9.19
+  + Ubuntu 20.04.1
+  + Graphics-Card 2-4090
 ```bash
 git clone https://github.com/lililuya/Graduation-Project.git
 cd env
 ```
-Use conda or pip 
++ Use conda or pip 
 ```bash
 # if use conda, modify the prefix of environment.yml or delete it to use the default location
 conda env create -f environment.yml
@@ -51,7 +56,43 @@ pip install modelscope==1.13.3
 ```
 ### 2.3 tensorrt安装
 参考[tensorrt安装笔记](https://github.com/lililuya/break-stones/blob/main/library%20problem/Tensorrt%20install%20and%20usage.md)
-## 一些环境上的问题
+
+### 2.4 一些问题
++ 主要可能出现的问题是numba版本的问题，出现后更新numba版本即可
+```bash
+pip install -U numba
+```
+## 3.权重文件
++ [EAT权重文件](https://drive.google.com/file/d/1KK15n2fOdfLECWN5wvX54mVyDt18IZCo/view?usp=drive_link)
+    + 下载后放在根目录下的`ckpt`下
++ [GFPGAN](https://github.com/xuanandsix/GFPGAN-onnxruntime-demo)
+    + 下载后放到根目录的`restoration`下面
++ [GPTSOVIT权重](https://huggingface.co/kaze-mio/so-vits-genshin/tree/main)
+    + 下载后放到根目录下的`GPT_SoVits/weights`下面
++ [MODNET权重](https://drive.google.com/drive/folders/1umYmlCulvIFNaqPjwod1SayFmSRHziyR?usp=sharing)
+    + 下载后放在`pretrain`下面
++ [DeepSpeech](https://github.com/ashawkey/RAD-NeRF)
+    + 参考RADNERF
+
+## 4.运行
+### 4.1 本地运行
+```python
+python whole_pipeline_GPTSOVITS_asr_en_gradio_multivoice.py
+```
+### 4.2 使用Gradio自带内网穿透
+```bash
+# Modify launch=True
+```
++ 一些配置参考[Gradio Network Traversal](https://github.com/lililuya/Meta_Doctor)
+### 4.3界面
++ 情感虚拟人生成模块
+![test_record](https://github.com/lililuya/Graduation-Project/assets/141640497/a4d331ff-d060-47e7-924a-bb35fd6004b8)
++ 中英文TTS
+![test_TTS_en](https://github.com/lililuya/Graduation-Project/assets/141640497/f4e3180b-92c1-4740-aa23-27c5e81c1fbb)
++ 中英文ASR
+![page4](https://github.com/lililuya/Graduation-Project/assets/141640497/00deaa77-58f8-46f4-ae69-19013efbe520)
++ 抠图
+![page3](https://github.com/lililuya/Graduation-Project/assets/141640497/69b37296-6d36-45ae-9b13-67c0b1c2f48d)
 
 ## 引用文献
 ```txt
@@ -89,16 +130,16 @@ pip install modelscope==1.13.3
 }
 ```
 ## 相关仓库
-1. [FUN-ASR-ZH](https://www.modelscope.cn/models/iic/speech_paraformerbert_asr_nat-zh-cn-16k-aishell2-vocab5212-pytorch/summary)
-2. [FUN-ASR-EN](https://www.modelscope.cn/models/iic/speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/summary)
-3. [TTS-Sovits](https://github.com/RVC-Boss/GPT-SoVITS)
-4. [ChatGLM2-6B](https://github.com/THUDM/ChatGLM2-6B)
-5. [ModNet](https://github.com/ZHKKKe/MODNet)
-6. [EAT](https://github.com/yuangan/EAT_code)
-7. [DeepSpeech](https://github.com/mozilla/DeepSpeech)
-8. [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#downloading)
-9. [GFPGAN](https://github.com/TencentARC/GFPGAN)
-10. [EAT](https://github.com/yuangan/EAT_code)
++ [FUN-ASR-ZH](https://www.modelscope.cn/models/iic/speech_paraformerbert_asr_nat-zh-cn-16k-aishell2-vocab5212-pytorch/summary)
++ [FUN-ASR-EN](https://www.modelscope.cn/models/iic/speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/summary)
++ [TTS-Sovits](https://github.com/RVC-Boss/GPT-SoVITS)
++ [ChatGLM2-6B](https://github.com/THUDM/ChatGLM2-6B)
++ [ModNet](https://github.com/ZHKKKe/MODNet)
++ [EAT](https://github.com/yuangan/EAT_code)
++ [DeepSpeech](https://github.com/mozilla/DeepSpeech)
++ [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#downloading)
++ [GFPGAN](https://github.com/TencentARC/GFPGAN)
++ [EAT](https://github.com/yuangan/EAT_code)
 ## 一些参考
 1. 头拼合进身体，[EAT作者建议](https://github.com/yuangan/EAT_code/issues/16)。
 2. 背景抖动，[EAT作者建议](https://github.com/yuangan/EAT_code/issues/27)，本仓库采取MODNet方案。
