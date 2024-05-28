@@ -130,16 +130,16 @@ python whole_pipeline_GPTSOVITS_asr_en_gradio_multivoice.py
 }
 ```
 ## 相关仓库
-1. [FUN-ASR-ZH](https://www.modelscope.cn/models/iic/speech_paraformerbert_asr_nat-zh-cn-16k-aishell2-vocab5212-pytorch/summary)
-2. [FUN-ASR-EN](https://www.modelscope.cn/models/iic/speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/summary)
-3. [TTS-Sovits](https://github.com/RVC-Boss/GPT-SoVITS)
-4. [ChatGLM2-6B](https://github.com/THUDM/ChatGLM2-6B)
-5. [ModNet](https://github.com/ZHKKKe/MODNet)
-6. [EAT](https://github.com/yuangan/EAT_code)
-7. [DeepSpeech](https://github.com/mozilla/DeepSpeech)
-8. [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#downloading)
-9. [GFPGAN](https://github.com/TencentARC/GFPGAN)
-10. [EAT](https://github.com/yuangan/EAT_code)
++ [FUN-ASR-ZH](https://www.modelscope.cn/models/iic/speech_paraformerbert_asr_nat-zh-cn-16k-aishell2-vocab5212-pytorch/summary)
++ [FUN-ASR-EN](https://www.modelscope.cn/models/iic/speech_paraformer-large-vad-punc_asr_nat-en-16k-common-vocab10020/summary)
++ [TTS-Sovits](https://github.com/RVC-Boss/GPT-SoVITS)
++ [ChatGLM2-6B](https://github.com/THUDM/ChatGLM2-6B)
++ [ModNet](https://github.com/ZHKKKe/MODNet)
++ [EAT](https://github.com/yuangan/EAT_code)
++ [DeepSpeech](https://github.com/mozilla/DeepSpeech)
++ [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#downloading)
++ [GFPGAN](https://github.com/TencentARC/GFPGAN)
++ [EAT](https://github.com/yuangan/EAT_code)
 ## 一些参考
 1. 头拼合进身体，[EAT作者建议](https://github.com/yuangan/EAT_code/issues/16)。
 2. 背景抖动，[EAT作者建议](https://github.com/yuangan/EAT_code/issues/27)，本仓库采取MODNet方案。
