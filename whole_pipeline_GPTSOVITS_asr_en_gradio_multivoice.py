@@ -71,7 +71,7 @@ def torch_gc():
 class metahuman():
     # audio_path, wav_path, img_path, emotype
     def __init__(self, 
-                 my_config_file_path    = "./config/my_yaml_wholepipeline_gptsovits.yaml",
+                 my_config_file_path    = "./config/my_yaml_wholepipeline_gptsovits.yaml", 
                  build_model_cofig_path = "./config/deepprompt_eam3d_st_tanh_304_3090_all.yaml",
                  extractor_config_path  = "./config/vox-256-spade.yaml"):
         model_start_time = time.time()
@@ -260,39 +260,44 @@ class metahuman():
         如果是测试传过来的：那就没有abs_wavpath，这个项为None
         如果是模块传过来的，会在call中组织abspath的具体的值
     """
-    @torch.no_grad()   # 不计算梯度
+    @torch.no_grad()   
     def specialTTS(self, input_text, language, voice_type, abs_wavpath = None):
         now = datetime.now()
         formatted_now = now.strftime("%Y-%m-%d-%H-%M-%S")
         role = ""
+        # 先对声音类型进行判断、
+        language_mapping = lambda language: "zh" if language == "中文" else "en"  # 调用时，相当于函数的调用
+        if voice_type == "李文":
+            role = "liwen"
+        elif voice_type == "芙芙":
+            role = "fufu"
+        elif voice_type == "流萤":
+            role ="liuying"
+            
         # 根据abs的path判断即可，如果是来自User的测试数据，路径的父目录肯定是audio_tts,如果传过来是空值，重新给个路径
         if abs_wavpath is None:  # 说明test传过来的
-            language_mapping = lambda language: "zh" if language == "中文" else "en"  # 调用时，相当于函数的调用
-            if voice_type == "李文":
-                role = "liwen"
-            elif voice_type == "芙芙":
-                role = "fufu"
-            elif voice_type == "流萤":
-                role ="liuying"
             audio_name = f"{language_mapping(language)}_{formatted_now}_test_{role}.wav"
             abs_wavpath = os.path.join("./audio_file/audio_tts_test", audio_name) # 写入配置文件
         
+        # 如果是metahuman的系统调用
         if language == "英文":
             if role == "liwen":
-                audio_tts_en = self.gpt_infer_model_en.get_tts_wav(input_text, language)
+                audio_tts = self.gpt_infer_model_en.get_tts_wav(input_text, language)
             else:
-                return None
+                return None  # 异常
+            
         elif language == "中文":
             if role == "liwen":
-                audio_tts_zh = self.gpt_infer_model_zh.get_tts_wav(input_text, language)
+                audio_tts = self.gpt_infer_model_zh.get_tts_wav(input_text, language)
             elif role == "fufu":
-                audio_tts_zh = self.gpt_infer_model_fufu.get_tts_wav(input_text, language)
+                audio_tts = self.gpt_infer_model_fufu.get_tts_wav(input_text, language)
             elif role == "liuying":
-                audio_tts_zh = self.gpt_infer_model_liu.get_tts_wav(input_text, language)
+                audio_tts = self.gpt_infer_model_liu.get_tts_wav(input_text, language)
         else:
             print("error language")
-            return None
-        sf.write(abs_wavpath, audio_tts_zh, self.sample_rate, 'PCM_24')  # 写入指定路径
+            return None      # 异常
+        sf.write(abs_wavpath, audio_tts, self.sample_rate, 'PCM_24')  # 写入指定路径
+        
         import gc; gc.collect()
         # 清空显存
         torch.cuda.empty_cache()
@@ -426,8 +431,9 @@ class metahuman():
     """" Tensorrt session init """
     def _tensorrt_init(self, onnx_path):
         start_time      = time.time()
-        # bind session
-        # self.io_binding = ##
+        self.session    = onnxruntime.InferenceSession(onnx_path, 
+                        providers=["TensorrtExecutionProvider","CUDAExecutionProvider"])
+        self.io_binding = self.session.io_binding()
         end_time        = time.time()
         print(f"<==================== TensorRT backend build successful! ====================>")
         print(f"Cost {end_time - start_time} \n")
@@ -443,10 +449,19 @@ class metahuman():
     def generate_audio(self, audio_in_path, tts_audio_path, language_type, voice_type):
         start_time  = time.time()
         # 对语言进行判断定
+        now = datetime.now()
+        role = ""
+        formatted_now = now.strftime("%Y-%m-%d-%H-%M-%S")
         if language_type== "中文":
-            abs_wavpath = os.path.join(tts_audio_path, "tts_zh.wav")
+            if voice_type == "李文":
+                role="liwen"
+            elif voice_type == "芙芙":
+                role="fufu"
+            elif voice_type == "流萤":
+                role="liuyin"
+            abs_wavpath = os.path.join(tts_audio_path, f"tts_zh_{role}_{formatted_now}.wav")
         elif language_type == "英文":
-            abs_wavpath = os.path.join(tts_audio_path, "tts_en.wav")
+            abs_wavpath = os.path.join(tts_audio_path, f"tts_en_{role}_{formatted_now}.wav")
         asr_result  = self.ASR_Linguage(audio_in_path, language_type)
         chat_input  = self.postChatGLM(asr_result, language_type)
         audio_tts   = self.specialTTS(chat_input, language_type, voice_type, abs_wavpath)
@@ -470,14 +485,22 @@ class metahuman():
             resized_img = F.interpolate(img_tensor.unsqueeze(0), size=(512,512), mode='bicubic', align_corners=False)
             resized_normal_img = 2*(resized_img  - 0.5)  # -1 ~ 1
             img_list.append(resized_normal_img)
-
-        #定义输入与输出
-        # input_buff     = torch.empty((1,3,512,512), dtype=torch.float32, device="cuda").contiguous() # 判断Tensor按行展开后的顺序与其storage的顺序是否一致
-        # output_buff    = torch.empty((1,3,512,512), dtype=torch.float32, device="cuda").contiguous()
         
-        # loop every frame to restoration
-        # ......Hide details
+        input_buff     = torch.empty((1,3,512,512), dtype=torch.float32, device="cuda").contiguous() # 判断Tensor按行展开后的顺序与其storage的顺序是否一致
+        output_buff    = torch.empty((1,3,512,512), dtype=torch.float32, device="cuda").contiguous()
         
+        for i in tqdm(range(len(img_list))):
+            input_tensor = img_list[i].cuda()
+            input_buff   = input_tensor
+            self.io_binding.bind_input(name='input', device_type='cuda', device_id=0, element_type=np.float32, shape=(1,3,512,512), buffer_ptr=input_buff.data_ptr())
+            self.io_binding.bind_output(name='output', device_type='cuda', device_id=0, element_type=np.float32, shape=(1,3,512,512), buffer_ptr=output_buff.data_ptr())
+            self.session.run_with_iobinding(self.io_binding)
+            outpred1 = torch.squeeze(output_buff)    # (3, 512, 512)
+            outpred1 = torch.clamp(outpred1, -1, 1)  # 限制 -1 ~ 1
+            outpred1 = torch.add(outpred1, 1)        # 0 - 1
+            outpred1 = torch.div(outpred1, 2)        # 0 - 0.5
+            outpred1 = torch.mul(outpred1, 255)[:,:,:].permute(1,2,0).cpu().numpy()  # HWC 
+            result_list.append(outpred1.astype(np.uint8))
         end_time = time.time()
         
         print(f"==================== End GFPGAN restorate frames ====================")
@@ -606,8 +629,6 @@ class metahuman():
         elif pose=="驱动动作3":
             pose_path = "./demo/video_processed/W015_neu_1_002/poseimg/W015_neu_1_002.npy.gz"
             return pose_path
-            
-            
     """
     parameters:
         img:
@@ -641,8 +662,6 @@ class metahuman():
         video_path  = self.concat_video_EAT(frame_list, abs_wavpath, save_video_path)
         restoration_frame_list = self.frame_restoration(frame_list)
         # restoration_path = self.write_images_restoration(frame_list)
-        
-
         # abs_wavpath = "./demo/test_wav/output.wav"
         restoration_path = self.concat_video_RGB(restoration_frame_list, abs_wavpath, restoration_video_path)
         # video_path = self.concat_video_RGB(frame_list, abs_wavpath, save_video_path)
@@ -655,6 +674,7 @@ class metahuman():
         del frame_list  # 回收张量
         del infer_model # 将推理模型回收掉
         # self.torch_gc() # 回收显存
+        torch.cuda.empty_cache()
         return video_path, restoration_path, chat_input
         
     
