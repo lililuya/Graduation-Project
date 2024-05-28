@@ -15,6 +15,25 @@
 | :----: |:--------------------: |:--------------------: |:--------------------: |
 | <img src='./img/jiege.jpg' width='380'> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/7b155a42-6c87-4855-a5dd-70ac3b8c6686" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/5c63af56-2900-45f8-95db-045c951bccc0" type="video/mp4" > </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/91081951-bcd9-4df6-bf5b-2cb84e53ee04" type="video/mp4" > </video>| <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/21541e9a-c15f-4ce6-887f-fdb712e60a0e" type="video/mp4" > </video>|
 
+### 1.4 不同的声音测试
+|liwen|fufu|liuying|
+| :----: |:--------------------: |:--------------------: |
+| <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/4692307e-c437-4cf1-a26d-a23791ea0b45" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/b76d61e8-8a92-4d1a-bb55-6240ff8fc166" type="video/mp4" > </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/91081951-bcd9-4df6-bf5b-2cb84e53ee04" type="video/mp4" > </video>| | <video  src="" type="video/mp4" > </video>
+### 1.5 不同语言测试
+|Chinese|English|
+|:--------------------: |:--------------------: |
+|<video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/6016ddbe-97d0-4c23-9cd9-c26e84326311" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/a415cdb4-cab0-4eae-b73e-705f4c425eef" type="video/mp4" > </video>|
+
+### 1.6 不同的动作测试
+|pose1|pose2|pose3|
+|:--------------------: |:--------------------: |:--------------------: |
+| <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/418a8299-b570-4c47-8c02-556b34a42b15" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/1de09d69-00d6-48cf-832b-662acfc4ac58" type="video/mp4" > </video>| <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/74dbf7a6-4c4f-40aa-8a60-d72e16d77149" type="video/mp4" > </video>|
+
+
+
+
+
+
 
 
 
