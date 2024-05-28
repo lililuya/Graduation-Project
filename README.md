@@ -1,7 +1,19 @@
 # 基于大模型的高质量情感虚拟人系统
 ## 一些测试结果
 ### 测试卡通人像
-<iframe src="../style/video_style.html" width="100%" height="400px"></iframe>
+<div style="display: flex;">
+    <div style="flex: 1;">
+        <video width="100%" controls>
+            <source src="../text_exp_graduate_project/different_person/comic/original_comic.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div style="flex: 1;">
+        <video width="100%" controls>
+            <source src="../text_exp_graduate_project/different_person//comic/gpfgan_comic.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
 
 ## 环境准备
 
