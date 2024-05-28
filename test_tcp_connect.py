@@ -9,7 +9,7 @@ if __name__=="__main__":
     # 这个地方需要对模型进行初始化
     infer_model = metahuman()
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    host = '175.24.178.88'  # 服务器主机地址
+    host = ''  # 服务器主机地址
     port = 8984 # 服务器端口, 本地的端口
     server_socket.bind((host, port))
     # 监听传入的连接，允许最大的连接数为1
