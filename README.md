@@ -13,7 +13,7 @@
 ### 1.3 不同表情测试
 |driven image|happy|scared|neural|
 | :----: |:--------------------: |:--------------------: |:--------------------: |
-| <img src='./img/jiege.jpg' width='380'> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/7b155a42-6c87-4855-a5dd-70ac3b8c6686" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/5c63af56-2900-45f8-95db-045c951bccc0" type="video/mp4" > </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/b3ce7262-6544-4941-a967-d49f472f118b" type="video/mp4" > 
+| <img src='./img/jiege.jpg' width='380'> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/7b155a42-6c87-4855-a5dd-70ac3b8c6686" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/5c63af56-2900-45f8-95db-045c951bccc0" type="video/mp4" > </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/38fd3123-21ee-4666-b5b3-e97a1a7f5853" type="video/mp4" > 
 
 ### 1.4 不同的声音测试
 |liwen|fufu|liuying|
