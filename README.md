@@ -31,6 +31,10 @@
 
 ## 2. 环境准备
 ### 2.1 准备EAT环境和GPT-SOVITS环境
++ 系统环境
+  + Python 3.9.19
+  + Ubuntu 20.04.1
+  + Graphics-Card 2-4090
 ```bash
 git clone https://github.com/lililuya/Graduation-Project.git
 cd env
