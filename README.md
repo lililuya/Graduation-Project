@@ -29,42 +29,28 @@
 |:--------------------: |:--------------------: |:--------------------: |
 | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/418a8299-b570-4c47-8c02-556b34a42b15" type="video/mp4"> </video> | <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/1de09d69-00d6-48cf-832b-662acfc4ac58" type="video/mp4" > </video>| <video  src="https://github.com/lililuya/Graduation-Project/assets/141640497/74dbf7a6-4c4f-40aa-8a60-d72e16d77149" type="video/mp4" > </video>|
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 环境准备
-
+## 2. 环境准备
+### 2.1 准备EAT环境和GPT-SOVITS环境
+```bash
+git clone https://github.com/lililuya/Graduation-Project.git
+cd env
+```
+Use conda or pip 
+```bash
+# if use conda, modify the prefix of environment.yml or delete it to use the default location
+conda env create -f environment.yml
+```
+```bash
+# if use pip, delete some local package index.
+pip install -r requirements.txt
+```
+### 2.2 ModelScope和GPT-SOVISTS的环境问题，以ModelScope的为准
+```bash
+pip install funasr==1.0.22
+pip install modelscope==1.13.3
+```
+### 2.3 tensorrt安装
+参考[tensorrt安装笔记]()
 ## 一些环境上的问题
 
 ## 引用文献
@@ -124,4 +110,4 @@
 2. EAT初始化化类中所有模型---13G（优化GPT-Sovits权重加载可以到10G）
 
 ## 声明
-1. 仅供个人项目参考使用功能
+本项目以EAT为核心模型，主要做一个实验探究，不存在任何其他用途。
