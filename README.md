@@ -135,7 +135,6 @@ python whole_pipeline_GPTSOVITS_asr_en_gradio_multivoice.py
 + [TTS-Sovits](https://github.com/RVC-Boss/GPT-SoVITS)
 + [ChatGLM2-6B](https://github.com/THUDM/ChatGLM2-6B)
 + [ModNet](https://github.com/ZHKKKe/MODNet)
-+ [EAT](https://github.com/yuangan/EAT_code)
 + [DeepSpeech](https://github.com/mozilla/DeepSpeech)
 + [TensorRT](https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#downloading)
 + [GFPGAN](https://github.com/TencentARC/GFPGAN)
