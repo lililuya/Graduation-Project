@@ -144,7 +144,7 @@ python whole_pipeline_GPTSOVITS_asr_en_gradio_multivoice.py
 + [EAT](https://github.com/yuangan/EAT_code)
 
 ## 目前存在的问题
-+ 同步问题，参考[issue](https://github.com/yuangan/EAT_code/issues/28)
++ 中文同步问题，参考[issue](https://github.com/yuangan/EAT_code/issues/28)
 + 显存需要6G+10G才可以跑起来，现存占用过大。
 + 目前展示的结果效果不太好，因为选择的初始图片不太清晰，并且onnx下损失了超分模型的部分精度。
 + 头拼合进身体，[EAT作者建议](https://github.com/yuangan/EAT_code/issues/16)。
