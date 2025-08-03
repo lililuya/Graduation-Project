@@ -1,7 +1,7 @@
 # 基于大模型的高质量情感虚拟人系统
 + 系统流程图
 ![image](https://github.com/lililuya/Graduation-Project/assets/141640497/0e9b4630-979e-4dde-b66c-32bf3880566e)
-+ **所有源材料在[此处](https://github.com/lililuya/Graduation-Project/tree/main/Related%20source)，包含答辩ppt和Latex手稿**
++ **所有源材料在[此处](https://github.com/lililuya/Graduation-Project/tree/main/Related%20source)，包含答辩ppt和Latex手稿，偏应用，论文很烂，勿喷**
 ## 1. 一些测试结果
 ### 1.1 测试卡通人像
 |driven image|original| gfpgan|
