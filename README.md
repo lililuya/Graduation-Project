@@ -153,3 +153,5 @@ python whole_pipeline_GPTSOVITS_asr_en_gradio_multivoice.py
 + GPT-SOVITS模型自定义载，资源换时间，每个模型大约1.8G左右，可以写入配置文件自定义加载。
 ## 声明
 本项目以EAT为核心模型，主要做一个实验探究，不存在任何其他用途。
+## License
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
